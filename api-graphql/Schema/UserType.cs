@@ -1,5 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace api_graphql.Schema;
 
+[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
 public class UserType
 {
     public int Id { get; set; }
