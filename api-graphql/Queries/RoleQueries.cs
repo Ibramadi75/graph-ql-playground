@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using api_graphql.Schema;
+using Common;
 
 namespace api_graphql;
 
@@ -7,5 +8,5 @@ namespace api_graphql;
 [ExtendObjectType(OperationTypeNames.Query)]
 public class RoleQueries
 {
-    public IEnumerable<RoleType> GetRoles() => [RoleType.None, RoleType.User, RoleType.Admin];
+    public IEnumerable<Role> GetRoles() => [Role.None, Role.User, Role.Admin];
 }

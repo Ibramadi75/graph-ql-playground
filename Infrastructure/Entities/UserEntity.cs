@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Common;
 
 namespace Infrastructure.Entities;
 
@@ -15,7 +16,7 @@ public class UserEntity
     [EmailAddress]
     public string Email { get; set; } = string.Empty;
 
-    [Required] public RoleEntity Role { get; set; } = RoleEntity.None;
+    [Required] public Role Role { get; set; } = Role.None;
 
     [Column("CreatedAt")] public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 

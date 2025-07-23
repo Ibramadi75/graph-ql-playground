@@ -12,7 +12,7 @@ public static class UserMappings
             Id = domainUser.Id ?? 0,
             Name = domainUser.Name,
             Email = domainUser.Email,
-            Role = (RoleEntity)domainUser.Role,
+            Role = (Common.Role)domainUser.Role,
             UpdatedAt = DateTime.UtcNow
         };
     }
@@ -24,7 +24,7 @@ public static class UserMappings
     {
         entity.Name = domainUser.Name;
         entity.Email = domainUser.Email;
-        entity.Role = (RoleEntity)domainUser.Role;
+        entity.Role = (Common.Role)domainUser.Role;
         entity.UpdatedAt = DateTime.UtcNow;
     }
 }

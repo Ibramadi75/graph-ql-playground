@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using api_graphql.Schema;
 using Bogus;
+using Common;
 
 namespace api_graphql;
 
@@ -12,10 +13,10 @@ public class UserQueries
         .RuleFor(u => u.Id, f => f.Random.Int(1, 1000))
         .RuleFor(u => u.Name, f => f.Name.FullName())
         .RuleFor(u => u.Email, f => f.Internet.Email())
-        .RuleFor(u => u.Role, f => f.PickRandom<RoleType>())
+        .RuleFor(u => u.Role, f => f.PickRandom<Role>())
         .Generate(5);
     
-    public IEnumerable<UserType> GetUsersByRole(RoleType role) => new Faker<UserType>()
+    public IEnumerable<UserType> GetUsersByRole(Role role) => new Faker<UserType>()
         .RuleFor(u => u.Id, f => f.Random.Int(1, 1000))
         .RuleFor(u => u.Name, f => f.Name.FullName())
         .RuleFor(u => u.Email, f => f.Internet.Email())
